@@ -29,11 +29,17 @@ html {
   --contest-text: 1rem;
   --midnightblue: #002247;
   --selector-color: white;
+  --dark-grey: #222831;
+  --grey: #393e46;
+  --blue-green: #00adb5;
+  --white: #eeeeee;
 }
 
 body {
   padding: 0 10px;
   box-sizing: border-box;
+  background-color: var(--dark-grey);
+  color: var(--white);
 }
 
 #main {
@@ -98,7 +104,7 @@ nav > h1 {
   box-sizing: border-box;
   box-shadow: 0 0 5px var(--midnightblue);
   border-radius: 20px;
-  background-color: var(--selector-color);
+  background-color: var(--grey);
 }
 
 #current-option {
@@ -115,7 +121,7 @@ nav > h1 {
 }
 
 #options {
-  background-color: var(--selector-color);
+  background-color: var(--grey);
   position: absolute;
   top: 0;
   left: 0;
@@ -178,6 +184,7 @@ nav > h1 {
 
 #contest-all {
   display: grid;
+  /* width: 60%; */
   font-size: var(--contest-text);
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -200,7 +207,17 @@ a:hover * {
   padding: 10px;
   box-sizing: border-box;
   border-radius: 20px;
+  display: flex;
+  flex-direction: column;
   box-shadow: 0 0 5px var(--midnightblue);
+  background-color: var(--grey);
+}
+
+#project-name {
+  font-size: 2rem;
+  text-align: center;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
 @media screen and (max-width: 1024px) {
@@ -218,6 +235,8 @@ a:hover * {
 @media screen and (max-width: 690px) {
   #contest-all {
     grid-template-columns: 1fr;
+    width: 70%;
+    margin: 20px auto;
   }
 }
 
