@@ -170,13 +170,3 @@ function displayContests(result, callType) {
 }
 
 fetchDataAndDisplay("all");
-
-// let queryList = document.querySelectorAll("#hey");
-// let getList = document.getElementsByClassName("hey");
-// console.log(queryList);
-// console.log(getList);
-// let div = document.createElement("div");
-// div.classList.add("hey");
-// document.body.append(div);
-// console.log(queryList);
-// console.log(getList);
