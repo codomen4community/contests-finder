@@ -108,6 +108,7 @@ function displayContests(result, callType) {
     const currentContestDiv = document.createElement("div");
     const currentAnchorTag = document.createElement("a");
     const currentSite = document.createElement("p");
+    currentAnchorTag.id = "project-name";
     const startDate = document.createElement("p");
     const endDate = document.createElement("p");
     const startTime = document.createElement("p");
@@ -118,7 +119,7 @@ function displayContests(result, callType) {
 
     currentAnchorTag.href = `${contest.url}`;
     currentAnchorTag.target = "_blank";
-    currentAnchorTag.innerHTML = `Contest Name : ${contest.name} <ion-icon name="open-outline"></ion-icon>`;
+    currentAnchorTag.innerHTML = `${contest.name} <ion-icon name="open-outline"></ion-icon>`;
 
     startDate.textContent = `Start Date : ${start_date.getDate()}/${
       start_date.getMonth() + 1
@@ -128,9 +129,31 @@ function displayContests(result, callType) {
     }/${end_date.getFullYear()}`;
     startTime.textContent = `Start Time : ${start_date.getHours()}:${start_date.getMinutes()}`;
     endTime.textContent = `End Time : ${end_date.getHours()}:${end_date.getMinutes()}`;
-    duration.textContent = `Duration : ${(contest.duration / 3600).toFixed(
-      2
-    )} Hrs`;
+    duration.textContent = `Duration : ${durationSimplifier(contest.duration)}`;
+
+    function durationSimplifier(duration) {
+      let result = "";
+      let days;
+      let hours;
+      let minutes;
+
+      days = Math.floor(duration / 86400);
+      duration = duration % 86400;
+
+      hours = Math.floor(duration / 3600);
+      duration = duration % 3600;
+
+      minutes = Math.floor(duration / 60);
+      duration = duration % 60;
+
+      if (days != 0) result = result + days + " Days ";
+
+      if (hours != 0) result = result + hours + " Hours ";
+
+      if (minutes != 0) result = result + minutes + " Minutes";
+
+      return result;
+    }
 
     setSiteName(callType, currentSite, contest);
 
