@@ -201,20 +201,22 @@ a:hover * {
   text-decoration: underline;
   cursor: pointer;
 }
-
+ 
 .contest {
   font-size: var(--contest-text);
   padding: 10px;
   box-sizing: border-box;
   border-radius: 20px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  gap: 10px;
   box-shadow: 0 0 5px var(--midnightblue);
   background-color: var(--grey);
+  /* background-color: red; */
 }
 
 #project-name {
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-align: center;
   padding: 10px;
   box-sizing: border-box;
@@ -249,6 +251,11 @@ a:hover * {
     --normal-text: 1rem;
     --contest-text: 0.8rem;
   }
+
+  .cardDetails > a{
+    /* font-size: var(--main-heading-text); */
+    font-size: 3rem;
+  }
 }
 
 @media screen and (max-width: 300px) {
@@ -257,4 +264,35 @@ a:hover * {
     --sub-main-heading-text: 1.2rem;
     --normal-text: 0.9rem;
   }
+}
+
+@media screen and (min-width:600px) {
+  .contest {
+    flex-direction: column;
+  }
+
+  .cardDetails {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #project-name {
+    grid-column: span 2;
+  }
+
+  
+}
+
+
+.addImage {
+  background-image: url(../indexdumLogo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 40px;
+  background-position: center;
+}
+
+.cardDetails p {
+  margin-top: 5px;
+  /* font-size: .1rem; */
 }

@@ -123,12 +123,12 @@ function displayContests(result, callType) {
 
     startDate.textContent = `Start Date : ${start_date.getDate()}/${
       start_date.getMonth() + 1
-    }/${start_date.getFullYear()}`;
+    }/${start_date.getFullYear()}, ${start_date.getHours()}:${start_date.getMinutes()}`;
     endDate.textContent = `End Date : ${end_date.getDate()}/${
       end_date.getMonth() + 1
-    }/${end_date.getFullYear()}`;
-    startTime.textContent = `Start Time : ${start_date.getHours()}:${start_date.getMinutes()}`;
-    endTime.textContent = `End Time : ${end_date.getHours()}:${end_date.getMinutes()}`;
+    }/${end_date.getFullYear()}, ${end_date.getHours()}:${end_date.getMinutes()}`;
+    // startTime.textContent = `Start Time : ${start_date.getHours()}:${start_date.getMinutes()}`;
+    // endTime.textContent = `End Time : ${end_date.getHours()}:${end_date.getMinutes()}`;
     duration.textContent = `Duration : ${durationSimplifier(contest.duration)}`;
 
     function durationSimplifier(duration) {
@@ -157,16 +157,54 @@ function displayContests(result, callType) {
 
     setSiteName(callType, currentSite, contest);
 
-    currentContestDiv.append(currentAnchorTag);
-    currentContestDiv.append(currentSite);
-    currentContestDiv.append(startDate);
-    currentContestDiv.append(endDate);
-    currentContestDiv.append(startTime);
-    currentContestDiv.append(endTime);
-    currentContestDiv.append(duration);
+    // currentContestDiv.append(currentAnchorTag);
+    // currentContestDiv.append(currentSite);
+    // currentContestDiv.append(startDate);
+    // currentContestDiv.append(endDate);
+    // currentContestDiv.append(startTime);
+    // currentContestDiv.append(endTime);
+    // currentContestDiv.append(duration);
 
     contestDiv.append(currentContestDiv);
+
+    const gate = 
+      document.createElement("div")
+      // gate.innerHtml = "sup"
+      // gate.style.height = "300px"
+      // gate.style.backgroundColor = "red";
+      gate.classList.add("addImage")
+
+
+    currentContestDiv.appendChild(gate)
+    const nake = 
+      document.createElement("div")
+      // nake.innerHtml = "sup"
+      // nake.style.height = "300px"
+      // nake.style.backgroundColor = "red";
+          nake.append(currentAnchorTag);
+    nake.append(currentSite);
+    nake.append(startDate);
+    nake.append(endDate);
+    // nake.append(startTime);
+    // nake.append(endTime);
+    nake.append(duration);
+
+      nake.classList.add("cardDetails")
+
+
+    currentContestDiv.appendChild(nake)
   });
 }
 
+  // currentContestDiv.style.cssText = "background-color: red"
+
 fetchDataAndDisplay("all");
+
+
+// const gate = 
+//       document.createElement("div")
+//       gate.innerHtml = "sup"
+//       gate.style.height = "300px"
+//       gate.style.backgroundColor = "red";
+
+// currentContestDiv.appendChild(gate)
