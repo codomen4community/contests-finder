@@ -123,12 +123,12 @@ function displayContests(result, callType) {
 
     startDate.textContent = `Start Date : ${start_date.getDate()}/${
       start_date.getMonth() + 1
-    }/${start_date.getFullYear()}`;
+    }/${start_date.getFullYear()}, ${start_date.getHours()}:${start_date.getMinutes()}`;
     endDate.textContent = `End Date : ${end_date.getDate()}/${
       end_date.getMonth() + 1
-    }/${end_date.getFullYear()}`;
-    startTime.textContent = `Start Time : ${start_date.getHours()}:${start_date.getMinutes()}`;
-    endTime.textContent = `End Time : ${end_date.getHours()}:${end_date.getMinutes()}`;
+    }/${end_date.getFullYear()}, ${end_date.getHours()}:${end_date.getMinutes()}`;
+    // startTime.textContent = `Start Time : ${start_date.getHours()}:${start_date.getMinutes()}`;
+    // endTime.textContent = `End Time : ${end_date.getHours()}:${end_date.getMinutes()}`;
     duration.textContent = `Duration : ${durationSimplifier(contest.duration)}`;
 
     function durationSimplifier(duration) {
@@ -157,15 +157,26 @@ function displayContests(result, callType) {
 
     setSiteName(callType, currentSite, contest);
 
-    currentContestDiv.append(currentAnchorTag);
-    currentContestDiv.append(currentSite);
-    currentContestDiv.append(startDate);
-    currentContestDiv.append(endDate);
-    currentContestDiv.append(startTime);
-    currentContestDiv.append(endTime);
-    currentContestDiv.append(duration);
-
     contestDiv.append(currentContestDiv);
+
+    const CardLogo = 
+      document.createElement("div")
+      CardLogo.classList.add("addImage")
+
+
+    currentContestDiv.appendChild(CardLogo)
+    const CardDetail = 
+      document.createElement("div")
+    CardDetail.append(currentAnchorTag);
+    CardDetail.append(currentSite);
+    CardDetail.append(startDate);
+    CardDetail.append(endDate);
+    CardDetail.append(duration);
+
+      CardDetail.classList.add("cardDetails")
+
+
+    currentContestDiv.appendChild(CardDetail)
   });
 }
 
