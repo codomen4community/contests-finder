@@ -157,54 +157,27 @@ function displayContests(result, callType) {
 
     setSiteName(callType, currentSite, contest);
 
-    // currentContestDiv.append(currentAnchorTag);
-    // currentContestDiv.append(currentSite);
-    // currentContestDiv.append(startDate);
-    // currentContestDiv.append(endDate);
-    // currentContestDiv.append(startTime);
-    // currentContestDiv.append(endTime);
-    // currentContestDiv.append(duration);
-
     contestDiv.append(currentContestDiv);
 
-    const gate = 
+    const CardLogo = 
       document.createElement("div")
-      // gate.innerHtml = "sup"
-      // gate.style.height = "300px"
-      // gate.style.backgroundColor = "red";
-      gate.classList.add("addImage")
+      CardLogo.classList.add("addImage")
 
 
-    currentContestDiv.appendChild(gate)
-    const nake = 
+    currentContestDiv.appendChild(CardLogo)
+    const CardDetail = 
       document.createElement("div")
-      // nake.innerHtml = "sup"
-      // nake.style.height = "300px"
-      // nake.style.backgroundColor = "red";
-          nake.append(currentAnchorTag);
-    nake.append(currentSite);
-    nake.append(startDate);
-    nake.append(endDate);
-    // nake.append(startTime);
-    // nake.append(endTime);
-    nake.append(duration);
+    CardDetail.append(currentAnchorTag);
+    CardDetail.append(currentSite);
+    CardDetail.append(startDate);
+    CardDetail.append(endDate);
+    CardDetail.append(duration);
 
-      nake.classList.add("cardDetails")
+      CardDetail.classList.add("cardDetails")
 
 
-    currentContestDiv.appendChild(nake)
+    currentContestDiv.appendChild(CardDetail)
   });
 }
 
-  // currentContestDiv.style.cssText = "background-color: red"
-
 fetchDataAndDisplay("all");
-
-
-// const gate = 
-//       document.createElement("div")
-//       gate.innerHtml = "sup"
-//       gate.style.height = "300px"
-//       gate.style.backgroundColor = "red";
-
-// currentContestDiv.appendChild(gate)

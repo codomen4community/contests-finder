@@ -269,11 +269,13 @@ a:hover * {
 @media screen and (min-width:600px) {
   .contest {
     flex-direction: column;
+    padding: 15px;
   }
 
   .cardDetails {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 7px;
   }
 
   #project-name {
@@ -282,7 +284,6 @@ a:hover * {
 
   
 }
-
 
 .addImage {
   background-image: url(../indexdumLogo.png);
@@ -294,5 +295,4 @@ a:hover * {
 
 .cardDetails p {
   margin-top: 5px;
-  /* font-size: .1rem; */
 }
